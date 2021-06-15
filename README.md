@@ -30,14 +30,14 @@ Where `{transcriptionId}` is the ID provided in the successful response of [Conv
   ```json
   {
     "converted": boolean,
-    ["voice": string,]
-    ["narrationStyle": string,]
-    ["globalSpeed": string,]
-    ["audioDuration": number,]
-    ["audioUrl": string,]
-    ["error": boolean,]
-    ["errorMessage": string,]
+    "voice": string,          // Optional
+    "narrationStyle": string, // Optional
+    "globalSpeed": string,    // Optional
+    "audioDuration": number,  // Optional
+    "audioUrl": string,       // Optional
+    "error": boolean,         // Optional
+    "errorMessage": string,   // Optional
   }
   ```
 
-Optional parameters are marked with square brackets, and are only provided when applicable.
+Optional fields are only provided when applicable.
