@@ -21,7 +21,7 @@ Make sure to store your secret key privately and do not share it. Never use your
 
 Use this endpoint to check the conversion status of a certain article using its transcription ID.
 
-If the article is converted, the response will also contain the article configuration, e.g. voice and narration style. A `true` value for `error` property indicates a conversion failure.
+If the article is converted, the response will also contain the article configuration, e.g. voice and narration style. A `true` value for `error` field indicates a conversion failure.
 
 Where `{transcriptionId}` is the ID provided in the successful response of [Convert](#convert) endpoint.
 
@@ -30,13 +30,13 @@ Where `{transcriptionId}` is the ID provided in the successful response of [Conv
   ```jsonc
   {
     "converted": boolean,
+    "error": boolean,         // Optional
+    "errorMessage": string,   // Optional
+    "audioUrl": string,       // Optional
+    "audioDuration": number,  // Optional
     "voice": string,          // Optional
     "narrationStyle": string, // Optional
     "globalSpeed": string,    // Optional
-    "audioDuration": number,  // Optional
-    "audioUrl": string,       // Optional
-    "error": boolean,         // Optional
-    "errorMessage": string,   // Optional
   }
   ```
 
