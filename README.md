@@ -27,7 +27,7 @@ Where `{transcriptionId}` is the ID provided in the successful response of [Conv
 
 - Method: `GET`
 - Response (JSON):
-  ```json
+  ```jsonc
   {
     "converted": boolean,
     "voice": string,          // Optional
