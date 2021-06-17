@@ -13,7 +13,54 @@ Make sure to store your secret key privately and do not share it. Never use your
 
 ## Endpoints
 
-- Base URL: `https://play.ht/api/`
+- Base URL: `https://play.ht/api/v1/`
+
+### Convert
+
+- Endpoint:  `./convert`
+
+Use this endpoint to start converting an article from text to audio.
+
+- Method: `POST`
+- Body (JSON):
+  ```jsonc
+  {
+    "voice": string,
+    "content": string[],
+    "ssml": string[],
+    "title": string,          // Optional
+    "narrationStyle": string, // Optional         
+    "globalSpeed": string,    // Optional      
+    "pronunciations": { key: string, value: string }[], // Optional
+  }
+  ```
+
+  `voice` is the ID of the voice used to transcribe the text. Refer to the [Voices](https://play.ht/app/voices) page for more details.
+
+  Only one of `content` or `ssml` can be passed:
+
+    - `content` is an array of strings, where each string represents a paragraph in plain text format.
+
+    - `ssml` is an array of strings, where each string represents a paragraph in SSML format. [Learn more about SSML](https://www.w3.org/TR/speech-synthesis/). Not all SSML features are supported with all voices.
+
+  `title` is a field to name your file. The name will be displayed in your [Audio files page](https://play.ht/app/audio-files) in your dashboard.
+  
+  `narrationStyle` is a string representing the tone of the voice pronouncing the text. Make sure the value for `narrationStyle` is supported by the voice in your request. Refer to the [Voices](https://play.ht/app/voices) page for more details on support.
+
+  `globalSpeed` is a string in the format `<number>%`, where `<number>` is in the closed interval of `[20, 200]`. Use this to speed-up, or slow-down your output audio.
+
+  `pronunciations` is an array of key-value pair objects, where `key` is the source string (e.g. `"Play.ht"`), and `value` is the target pronunciation (e.g. `"Play dot H T"`). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand).
+
+- Response (JSON):
+  ```jsonc
+  {
+    "status": "transcriping" | "error",
+    "transcriptionId": string,
+    "error": string // Optional
+  }
+  ```
+
+  Use the `transcriptionId` in the response to refer to the conversion in the [Article status](#article-status) endpoint.
 
 ### Article status
 
