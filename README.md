@@ -1,4 +1,4 @@
-Play.ht's Public API Documentaion
+Play.ht's Text to Speech API Documentaion
 ---
 
 ## Authentication
