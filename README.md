@@ -1,4 +1,4 @@
-API
+Play.ht's Public API Documentaion
 ---
 
 ## Authentication
@@ -22,6 +22,7 @@ Make sure to store your secret key privately and do not share it. Never use your
 Use this endpoint to start converting an article from text to audio.
 
 - Method: `POST`
+
 - Body (JSON):
   ```jsonc
   {
@@ -73,6 +74,7 @@ If the article is converted, the response will also contain the article configur
 Where `{transcriptionId}` is the ID provided in the successful response of [Convert](#convert) endpoint.
 
 - Method: `GET`
+
 - Response (JSON):
   ```jsonc
   {
