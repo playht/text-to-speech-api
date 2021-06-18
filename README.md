@@ -1,5 +1,27 @@
-Play.ht's Text to Speech API Documentaion
----
+# Play.ht Text to Speech API
+![alt text](https://s3.amazonaws.com/static.play.ht/text-to-speech-api.png "text to speech api")
+
+Access all the best Text to Speech AI voices from Google, Amazon, IBM and Microsoft using Play.ht's Text to Speech API. Our [AI voice generator](https://play.ht) provides a single interface to convert text to audio using voices across different providers. 
+
+Using a single Text to Speech API in your projects saves you time and offers many benefits -
+1. You instantly get access to all the voices from Google, Amazon, IBM and Microsoft.
+2. You maintain only one API integration.
+3. You don't have to worry about API upgrades or changes made on Google, Amazon, IBM and Microsoft.
+4. Any new voices added on these platforms are instantly avaiable to you.
+
+You need to have a Play.ht account with word credit to be able to access the API.
+
+## Overview of API
+
+There are two endpoints on the API that you will use to convert text to speech - 
+1. `/convert` - does the text to audio conversion
+2. `/articleStatus` - lets you know if the conversion is done
+
+Since the text to speech conversion is an asynchronous process, you will first make a POST request to the `/convert` endpoint with the text and voice, and then make GET requests to the `/articleStatus` endpoint to check if the conversion is done and to get the audio file.
+
+The two endpoints have been described in detail below.
+
+But first, we need authentication!
 
 ## Authentication
 
@@ -36,7 +58,7 @@ Use this endpoint to start converting an article from text to audio.
   }
   ```
 
-  `voice` is the ID of the voice used to transcribe the text. Refer to the [Voices](https://play.ht/app/voices) page for more details.
+  `voice` is the ID of the voice used to synthesize the text. Refer to our [Text to Speech voices](https://play.ht/text-to-speech/voices/) page for more details.
 
   Only one of `content` or `ssml` can be passed:
 
@@ -44,13 +66,13 @@ Use this endpoint to start converting an article from text to audio.
 
     - `ssml` is an array of strings, where each string represents a paragraph in SSML format. [Learn more about SSML](https://www.w3.org/TR/speech-synthesis/). Not all SSML features are supported with all voices.
 
-  `title` is a field to name your file. The name will be displayed in your [Audio files page](https://play.ht/app/audio-files) in your dashboard.
+  `title` is a field to name your file. You can use this name to find the audio in your Play.ht dashboard.
   
-  `narrationStyle` is a string representing the tone of the voice pronouncing the text. Make sure the value for `narrationStyle` is supported by the voice in your request. Refer to the [Voices](https://play.ht/app/voices) page for more details on support.
+  `narrationStyle` is a string representing the tone and accent of the voice to read the text. Make sure the value for `narrationStyle` is supported by the voice in your request.
 
-  `globalSpeed` is a string in the format `<number>%`, where `<number>` is in the closed interval of `[20, 200]`. Use this to speed-up, or slow-down your output audio.
+  `globalSpeed` is a string in the format `<number>%`, where `<number>` is in the closed interval of `[20, 200]`. Use this to speed-up, or slow-down the speaking rate of the speech.
 
-  `pronunciations` is an array of key-value pair objects, where `key` is the source string (e.g. `"Play.ht"`), and `value` is the target pronunciation (e.g. `"Play dot H T"`). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand).
+  `pronunciations` is an array of key-value pair objects, where `key` is the source string (e.g. `"Play.ht"`), and `value` is the target pronunciation (e.g. `"Play dot H T"`). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand name).
 
 - Response (JSON):
   ```jsonc
@@ -61,15 +83,15 @@ Use this endpoint to start converting an article from text to audio.
   }
   ```
 
-  Use the `transcriptionId` in the response to refer to the conversion in the [Article status](#article-status) endpoint.
+  Use the `transcriptionId` in the response to check the conversion status in the [Article status](#article-status) endpoint.
 
-### Article status
+### Transcription status
 
 - Endpoint:  `./articleStatus?transcriptionId={transcriptionId}`
 
-Use this endpoint to check the conversion status of a certain article using its transcription ID.
+Use this endpoint to check the conversion status of your text using its transcription ID.
 
-If the article is converted, the response will also contain the article configuration, e.g. voice and narration style. A `true` value for `error` field indicates a conversion failure.
+If the article (text) is converted to audio, the response will contain the audio file URL along with certain metadata such as voice and narration style. A `true` value for `error` field indicates a conversion failure.
 
 Where `{transcriptionId}` is the ID provided in the successful response of [Convert](#convert) endpoint.
 
