@@ -9,7 +9,9 @@ Using a single text-to-speech API in your projects saves you time and offers man
 3. You don't have to worry about API upgrades or changes made on Google, Amazon, IBM and Microsoft.
 4. Any new voices added on these platforms are instantly available to you.
 
-You need to have a Play.ht account with word credit to be able to access the API.
+Take a look at the [Voices reference file](Voices.md) to see a list of the available voices and languages. The file also contains audio samples to help you pick.
+
+**Note:** You need to have a Play.ht account with word credit to be able to access the API.
 
 ## Overview of API
 
@@ -58,7 +60,7 @@ Use this endpoint to start converting an article from text to audio.
   }
   ```
 
-  `voice` is the ID of the voice used to synthesize the text. Refer to our [Text to Speech voices](https://play.ht/text-to-speech/voices/) page for more details.
+  `voice` is the ID of the voice used to synthesize the text. Refer to the [Voices reference file](Voices.md) for more details.
 
   Only one of `content` or `ssml` can be passed:
 
