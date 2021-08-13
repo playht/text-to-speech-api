@@ -16,9 +16,9 @@ voicesArr.forEach((v) => {
 ```
 -->
 
-# Voices
+# AI Text to Speech Voices
 
-This is a list of all the available voices on the API.
+This is a list of all the available text to speech voices in the API with their audio samples.
 
 Use "Voice ID" from this list to reference a voice in your calls to the API. You can also listen to a sample of the each voice through its "Sample" URL.
 
