@@ -1,23 +1,23 @@
-# Play.ht Text to Speech API
-![alt text](https://s3.amazonaws.com/static.play.ht/text-to-speech-api.png "text to speech api")
+# Play.ht Text-to-Speech API
+![](https://s3.amazonaws.com/static.play.ht/text-to-speech-api.png)
 
-Access all the best Text to Speech AI voices from Google, Amazon, IBM and Microsoft using Play.ht's Text to Speech API. Our [AI voice generator](https://play.ht) provides a single interface to convert text to audio using voices across different providers. 
+Access all the best text-to-speech AI voices from Google, Amazon, IBM and Microsoft using Play.ht's text-to-speech API. Our [AI voice generator](https://play.ht) provides a single interface to convert text to audio using voices across different providers. 
 
-Using a single Text to Speech API in your projects saves you time and offers many benefits -
+Using a single text-to-speech API in your projects saves you time and offers many benefits:
 1. You instantly get access to all the voices from Google, Amazon, IBM and Microsoft.
 2. You maintain only one API integration.
 3. You don't have to worry about API upgrades or changes made on Google, Amazon, IBM and Microsoft.
-4. Any new voices added on these platforms are instantly avaiable to you.
+4. Any new voices added on these platforms are instantly available to you.
 
 You need to have a Play.ht account with word credit to be able to access the API.
 
 ## Overview of API
 
-There are two endpoints on the API that you will use to convert text to speech - 
-1. `/convert` - does the text to audio conversion
-2. `/articleStatus` - lets you know if the conversion is done
+There are two endpoints on the API that you will use to convert text to speech:
+1. `/convert`: Performs the text-to-speech conversion.
+2. `/articleStatus`: Lets you know if the conversion is done.
 
-Since the text to speech conversion is an asynchronous process, you will first make a POST request to the `/convert` endpoint with the text and voice, and then make GET requests to the `/articleStatus` endpoint to check if the conversion is done and to get the audio file.
+Since the text-to-speech conversion is an asynchronous process, you will first make a `POST` request to the `/convert` endpoint with the text and voice, and then make `GET` requests to the `/articleStatus` endpoint to check if the conversion is done and to get the audio file.
 
 The two endpoints have been described in detail below.
 
