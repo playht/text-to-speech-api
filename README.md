@@ -39,6 +39,10 @@ Make sure to store your secret key privately and do not share it. Never use your
 
 - Base URL: `https://play.ht/api/v1/`
 
+**Notes:**
+- All endpoints are relative to the base URL.
+- Requests should always be in JSON format, with a `Content-Type: application/json` header.
+
 ### Convert
 
 - Endpoint:  `./convert`
