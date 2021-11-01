@@ -10,9 +10,9 @@ Voice ID  |  Voice Name  |  Language  |  Narration Styles  |   |
 
 AllVoicesArr.forEach((v) => {
   tableStr += `\`${v.value}\`  |  ${v.name}  |  ${v.language}  |  `;
-  tableStr += v.styles ? v.styles.map(s => `\`${s}\``).join(', ') : '---';
+  tableStr += v.styles ? v.styles.map(s => `\`${s}\``).join(', ') : '&mdash;';
   tableStr += '  |';
-  tableStr += v.sample ? `[Sample](${v.sample})` : '---';
+  tableStr += v.sample ? `[Sample](${v.sample})` : '&mdash;';
   tableStr += '\n';
 });
 
