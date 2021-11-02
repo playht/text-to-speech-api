@@ -81,7 +81,7 @@ Use this endpoint to start converting an article from text to audio.
 
   `pronunciations` is an array of key-value pair objects, where `key` is the source string (e.g. `"Play.ht"`), and `value` is the target pronunciation (e.g. `"Play dot H T"`). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand name).
 
-  `trimSilence` is a boolean value. When enabled, the audio will be trimmed to remove any silence from the end of the file. *Note:* `trimSilence` only works if audio format is set to `.wav` in your [Audio Quality settings](https://play.ht/app/conf).
+  `trimSilence` is a boolean value. When enabled, the audio will be trimmed to remove any silence from the end of the file.
 
 - Response (JSON):
   ```jsonc
