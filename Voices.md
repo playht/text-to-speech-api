@@ -666,3 +666,5 @@ Voice ID  |  Voice Name  |  Language  |  Narration Styles  |   |
 `Gwyneth`  |  Gwyneth  |  Welsh  |  ---  |[Sample](https://firebasestorage.googleapis.com/v0/b/play-68705.appspot.com/o/samples%2FGwyneth.mp3?alt=media&token=ae6f2307-571a-468d-988f-5c18534d8a15)
 `cy-GB-NiaNeural`  |  Nia  |  Welsh  |  ---  |---
 `cy-GB-AledNeural`  |  Aled  |  Welsh  |  ---  |---
+`my-MM-NilarNeural` | Nilar | Burmese | --- | [Sample](https://media.play.ht/voice-samples/my-MM-NilarNeural.mp3)
+`my-MM-ThihaNeural` | Thiha | Burmese | --- | [Sample](https://media.play.ht/voice-samples/my-MM-ThihaNeural.mp3)
