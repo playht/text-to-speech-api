@@ -121,3 +121,40 @@ Where `{transcriptionId}` is the ID provided in the successful response of [Conv
   ```
 
 Optional fields are only provided when applicable.
+
+- Examples (cURL Request):
+  ```ssml with pauses
+  curl --location --request POST 'https://play.ht/api/v1/convert' \
+  --header 'Authorization: **************' \
+  --header 'X-User-ID: ***************' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "voice": "en-US-MichelleNeural",
+  "ssml": ["<speak><p>Hello my fried <break time=\"0.5s\"/></p></speak>"],
+  "title": "Testing public api convertion"
+  }'
+  ```
+- Example (Python Request):
+  ```
+  import requests
+  import json
+
+  url = "https://play.ht/api/v1/convert"
+
+  payload = json.dumps({
+    "voice": "en-US-MichelleNeural",
+    "content": [
+     "Hello My frinedsss",
+     "either pass content s an array of strings , or ssml , but not both"
+    ],
+     "title": "Testing public api convertion"
+  })
+  headers = {
+    'Authorization': '******************',
+    'X-User-ID': '**************',
+    'Content-Type': 'application/json'
+  }
+
+  response = requests.request("POST", url, headers=headers, data=payload)
+  print(response.text)
+  ```
