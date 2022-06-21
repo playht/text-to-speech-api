@@ -158,3 +158,28 @@ Optional fields are only provided when applicable.
   response = requests.request("POST", url, headers=headers, data=payload)
   print(response.text)
   ```
+- Example (PHP - pecl_http):
+  ```Using multi voices 
+  <?php
+  $client = new http\Client;
+  $request = new http\Client\Request;
+  $request->setRequestUrl('https://play.ht/api/v1/convert');
+  $request->setRequestMethod('POST');
+  $body = new http\Message\Body;
+  $body->append('{
+    "voice": "en-US-MichelleNeural",
+    "ssml": ["<speak><p>Hello my fried <break time=\"0.5s\"/></p></speak>",
+        "<speak><p>--BEGIN-PLAYHT-CUSTOM-VOICE--en-US-AmberNeural--END-PLAYHT-CUSTOM-VOICE--How are you doing</p></speak>"],
+    "title": "Testing public api convertion"
+  }');
+  $request->setBody($body);
+  $request->setOptions(array());
+  $request->setHeaders(array(
+    'Authorization' => '*******************',
+    'X-User-ID' => '***************',
+    'Content-Type' => 'application/json'
+  ));
+  $client->enqueue($request)->send();
+  $response = $client->getResponse();
+  echo $response->getBody();
+```
