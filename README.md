@@ -93,6 +93,58 @@ Use this endpoint to start converting an article from text to audio.
   ```
 
   Use the `transcriptionId` in the response to check the conversion status in the [Article status](#article-status) endpoint.
+  
+ ### Update Article
+
+- Endpoint:  `./convert`
+
+Use this endpoint to start converting an article from text to audio.
+
+- Method: `POST`
+
+- Body (JSON):
+  ```jsonc
+  {
+    "voice": string,
+    "content": string[],
+    "ssml": string[],
+    "title": string,          // Optional
+    "narrationStyle": string, // Optional         
+    "globalSpeed": string,    // Optional      
+    "pronunciations": { key: string, value: string }[], // Optional
+    "trimSilence": boolean,   // Optional,
+    "transcriptionId": string
+  }
+  ```
+
+  `voice` is the ID of the voice used to synthesize the text. Refer to the [Voices reference file](Voices.md) for more details.
+
+  Only one of `content` or `ssml` can be passed:
+
+    - `content` is an array of strings, where each string represents a paragraph in plain text format.
+
+    - `ssml` is an array of strings, where each string represents a paragraph in SSML format. [Learn more about SSML](https://www.w3.org/TR/speech-synthesis/). Not all SSML features are supported with all voices.
+
+  `title` is a field to name your file. You can use this name to find the audio in your Play.ht dashboard.
+  
+  `narrationStyle` is a string representing the tone and accent of the voice to read the text. Make sure the value for `narrationStyle` is supported by the voice in your request. Refer to the [Voices reference file](Voices.md) for more details.
+
+  `globalSpeed` is a string in the format `<number>%`, where `<number>` is in the closed interval of `[20, 200]`. Use this to speed-up, or slow-down the speaking rate of the speech.
+
+  `pronunciations` is an array of key-value pair objects, where `key` is the source string (e.g. `"Play.ht"`), and `value` is the target pronunciation (e.g. `"Play dot H T"`). Use this when you want to customize the pronunciation of a certain word/phrase (e.g. your brand name).
+
+  `trimSilence` is a boolean value. When enabled, the audio will be trimmed to remove any silence from the end of the file.
+
+- Response (JSON):
+  ```jsonc
+  {
+    "status": "transcriping" | "error",
+    "transcriptionId": string,
+    "error": string // Optional
+  }
+  ```
+
+  Use the `transcriptionId` in the response to check the conversion status in the [Article status](#article-status) endpoint.
 
 ### Transcription status
 
