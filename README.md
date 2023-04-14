@@ -9,11 +9,33 @@ Using a single text-to-speech API in your projects saves you time and offers man
 3. You don't have to worry about API upgrades or changes made on Google, Amazon, IBM and Microsoft.
 4. Any new voices added on these platforms are instantly available to you.
 
+<br><br>
+
+> ## 💡 New docs - https://docs.play.ht!
+> 
+> <div align="center">
+>
+> <br>
+> We are excited to announce the release of our new documentation page, which provides a comprehensive specification of all our API endpoints, along with interactive demos to help you get started quickly.
+>
+> You can access the documentation by visiting https://docs.play.ht!
+> <br><br>
+>
+> ![image](https://user-images.githubusercontent.com/5091082/232076784-6496568d-afc1-452b-9e57-2f9e2f7ec9f0.png)
+> <br>https://docs.play.ht
+> </div>
+> 
+> <br><br>
+
+<br><br>
+
 Take a look at the [Voices reference file](Voices.md) to see a list of the available voices and languages. The file also contains audio samples to help you pick.
 
 **Note:** You need to have a Play.ht account with word credit to be able to access the API.
 
 ## Overview of API
+
+> 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
 
 There are two endpoints on the API that you will use to convert text to speech:
 1. `/convert`: Performs the text-to-speech conversion.
@@ -26,6 +48,8 @@ The two endpoints have been described in detail below.
 But first, we need authentication!
 
 ## Authentication
+
+> 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
 
 All endpoints require authentication. Authentication consists of two required HTTPS headers:
 - `Authorization`: This is where your secret key goes.
@@ -44,6 +68,8 @@ Make sure to store your secret key privately and do not share it. Never use your
 - Requests should always be in JSON format, with a `Content-Type: application/json` header.
 
 ### Convert text to speech
+
+> 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
 
 - Endpoint:  `./convert`
 
@@ -67,6 +93,8 @@ Use this endpoint to start converting an article from text to audio.
   ```
 
   `voice` is the ID of the voice used to synthesize the text. Refer to the [Voices reference file](Voices.md) for more details.
+  
+  > 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
 
   Only one of `content` or `ssml` can be passed:
 
@@ -101,6 +129,8 @@ Use this endpoint to start converting an article from text to audio.
 
 ### Transcription status
 
+> 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
+
 - Endpoint:  `./articleStatus?transcriptionId={transcriptionId}`
 
 Use this endpoint to check the conversion status of your text using its transcription ID.
@@ -124,6 +154,8 @@ Where `{transcriptionId}` is the ID provided in the successful response of [Conv
     "globalSpeed": string,    // Optional
   }
   ```
+
+> 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
 
 Optional fields are only provided when applicable.
 
@@ -188,3 +220,5 @@ Optional fields are only provided when applicable.
   $response = $client->getResponse();
   echo $response->getBody();
 ```
+
+> 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
