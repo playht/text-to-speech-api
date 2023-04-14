@@ -61,6 +61,8 @@ Make sure to store your secret key privately and do not share it. Never use your
 
 ## Endpoints
 
+> 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
+
 - Base URL: `https://play.ht/api/v1/`
 
 **Notes:**
@@ -219,6 +221,6 @@ Optional fields are only provided when applicable.
   $client->enqueue($request)->send();
   $response = $client->getResponse();
   echo $response->getBody();
-```
+  ```
 
 > 💡 This page is now archived for historic purposes. If you're looking for the most up-to-date information and documentation, please visit our new docs: https://docs.play.ht
