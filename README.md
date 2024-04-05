@@ -1,13 +1,6 @@
 # Play.ht Text-to-Speech API
-![](https://s3.amazonaws.com/static.play.ht/text-to-speech-api.png)
 
-Access all the best text-to-speech AI voices from Google, Amazon, IBM and Microsoft using Play.ht's text-to-speech API. Our [AI voice generator](https://play.ht) provides a single interface to convert text to audio using voices across different providers. 
-
-Using a single text-to-speech API in your projects saves you time and offers many benefits:
-1. You instantly get access to all the voices from Google, Amazon, IBM and Microsoft.
-2. You maintain only one API integration.
-3. You don't have to worry about API upgrades or changes made on Google, Amazon, IBM and Microsoft.
-4. Any new voices added on these platforms are instantly available to you.
+Access the best text-to-speech AI voices using Play.ht's text-to-speech API. Our [AI voice generator](https://play.ht) provides a single interface to generate ultra-realistic speech from text. You can also clone voice and use them to generate speech. 
 
 <br><br>
 
